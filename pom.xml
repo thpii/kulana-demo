@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>com.thpii</groupId>
 			<artifactId>kulana-core</artifactId>
-			<version>1.0.4</version>
+			<version>1.0.5</version>
 		</dependency>		
 	</dependencies>
 
