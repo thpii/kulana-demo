@@ -87,6 +87,11 @@
    	  <appender-ref ref="CONSOLE"/>
    </logger>
    
+   <logger name="java.net">
+   	  <level value="ERROR"/>
+   	  <appender-ref ref="CONSOLE"/>
+   </logger>
+   
    <root>
   	  <priority value="INFO" />
   	  <appender-ref ref="FILE"/>
