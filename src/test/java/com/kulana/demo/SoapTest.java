@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.eviware.soapui.tools.SoapUITestCaseRunner;
 import com.kulana.core.foundation.APITest;
-import com.kulana.core.foundation.soapui.SoapUIRunner;
 
 /**
  * Test that demonstrates integration with SoapUI.
@@ -43,7 +43,7 @@ public class SoapTest extends APITest
 		testdataProp.store(new FileOutputStream(SOAP_PROJ_ROOT + "/Testdata.properties"), "Testdata");
 
 		// Initialize SoapUI test runner.
-		SoapUIRunner runner = new SoapUIRunner();
+		SoapUITestCaseRunner runner = new SoapUITestCaseRunner();
 		runner.setProjectFile(SOAP_PROJ_ROOT + "/_geoip-service.xml");
 		// Set some configurations for the runner.
 		runner.setEndpoint(configProp.getProperty("endpoint"));
