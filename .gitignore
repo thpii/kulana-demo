@@ -3,3 +3,13 @@
 /test-output
 /.classpath
 /.project
+/reports
+/target
+/test-output
+/.classpath
+/.project
+/GeoIPService_TestSuite-GetGeoIP_TestCase-GetGeoIPTestdataproperties-0-FAILED.txt
+/global-groovy.log
+/soapui.log
+/soapui-errors.log
+/.settings
