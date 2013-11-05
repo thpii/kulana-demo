@@ -18,12 +18,13 @@ package com.kulana.demo.gui;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import com.kulana.core.foundation.utils.HTML;
 import com.kulana.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.kulana.core.gui.AbstractPage;
 
 public class GmailHomePage extends AbstractPage 
 {
-	@FindBy(id="gbgs4dn")
+	@FindBy(xpath="//a[@guidedhelpid]")
 	public ExtendedWebElement loggedUser;
 	
 	public GmailHomePage(WebDriver driver) 
@@ -35,6 +36,6 @@ public class GmailHomePage extends AbstractPage
 	public String getUser()
 	{
 		assertElementPresent(loggedUser);
-		return loggedUser.getText();
+		return loggedUser.getAttribute(HTML.TITLE);
 	}
 }
