@@ -26,16 +26,16 @@ import com.kulana.core.foundation.http.HttpResponseStatusType;
 public class RestTest extends APITest
 {
 	@Test(dataProvider="excel_ds")
-	@Parameters({"testTitle", "ip", "countryCode", "countryName", "laliture", "longtitude"})
-	public void testRestService(String testTitle, String ip, String countryCode, String countryName, String laliture, String longtitude)
+	@Parameters({"testTitle", "ip", "countryCode", "countryName", "latitude", "longtitude"})
+	public void testRestService(String testTitle, String ip, String countryCode, String countryName, String latitude, String longtitude)
 	{
 		GeoIPGetMethod geoIPGetMethod = apiMethodBuilder.build(new GeoIPGetMethod("xml", ip));
 		// Set response expectations
 		geoIPGetMethod.expectResponseStatus(HttpResponseStatusType.OK_200);
-		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//Ip", Matchers.equalTo(ip)));
+		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//IP", Matchers.equalTo(ip)));
 		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//CountryCode", Matchers.equalTo(countryCode)));
 		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//CountryName", Matchers.equalTo(countryName)));
-		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//Latitude", Matchers.equalTo(laliture)));
+		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//Latitude", Matchers.equalTo(latitude)));
 		geoIPGetMethod.expectInResponse(Matchers.hasXPath("//Longitude", Matchers.equalTo(longtitude)));
 		// Call REST service method
 		geoIPGetMethod.call();
